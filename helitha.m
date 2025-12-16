@@ -19,6 +19,11 @@ theta = linspace(0, 2*pi, 200);
 fill(r_s*cos(theta), r_s*sin(theta), 'k', 'EdgeColor', 'c', 'LineWidth', 1.5);
 plot(1.5*r_s*cos(theta), 1.5*r_s*sin(theta), 'y--', 'LineWidth', 1.5);
 
+%% Create video writer
+v = VideoWriter('blackhole_simulation2.mp4','MPEG-4');
+v.FrameRate = 30;     % Adjust as desired
+open(v);
+
 %% Initial photon conditions
 x = 29; 
 y = 20;   
@@ -80,13 +85,23 @@ for i = 1:length(x1)
     addpoints(ray3, x3(i), y3(i));
 
     drawnow limitrate;
+
+    % ---- Capture frame for video ----
+    frame = getframe(gcf);
+    writeVideo(v, frame);
+
     pause(0.03);
 end
+
+
 
 legend("Black Hole","Photon Sphere","Start Point", ...
        "Ray 1","Ray 2","Ray 3", ...
        'TextColor','w','Color','k');
 hold off;
+
+% Close the video file
+close(v);
 
 %% around a point
 

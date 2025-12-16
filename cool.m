@@ -31,8 +31,8 @@ fill(r_s*cos(theta), r_s*sin(theta), 'k', 'EdgeColor', 'r', 'LineWidth', 1.5);
 plot(1.5*r_s*cos(theta), 1.5*r_s*sin(theta), 'y--', 'LineWidth', 1.5);
 
 %% MOVING SOURCE PATH
-T = 200;                    % number of video frames
-tpath = linspace(-view_width, view_width, T);
+T = 10;                    % number of video frames
+tpath = linspace(-10, -9, T);
 % path_x = 25*cos(tpath) - 10;       % circular
 % path_y = 25*sin(tpath);            % circular
 path_y = repmat(25, size(tpath)); % constant y position

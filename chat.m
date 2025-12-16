@@ -4,7 +4,7 @@ clc; clear; close all;
 r_s = 5;   % Schwarzschild radius
 
 %% Create 12 launch directions (0°, 30°, …, 330°)
-N = 20;
+N = 360;
 angles = linspace(0, 360-(360/N), N) * pi/180;
 
 %% Figure Setup
@@ -23,6 +23,10 @@ theta = linspace(0, 2*pi, 200);
 fill(r_s*cos(theta), r_s*sin(theta), 'k', 'EdgeColor', 'r', 'LineWidth', 1.5);
 plot(1.5*r_s*cos(theta), 1.5*r_s*sin(theta), 'y--', 'LineWidth', 1.5);
 
+%% Create video writer
+v = VideoWriter('spider61000.mp4','MPEG-4');
+v.FrameRate = 30;     % Adjust as desired
+open(v);
 %% Starting point for all rays
 x0 = 29; 
 y0 = -20;
@@ -32,7 +36,7 @@ plot(x0, y0, 'go', 'MarkerSize', 10, 'MarkerFaceColor','g');
 speed = 80;
 
 %% Time settings
-t_span = linspace(0, 100, 5000);
+t_span = linspace(0, 100, 10000);
 opts = odeset('RelTol',1e-4,'AbsTol',1e-4);
 
 %% Noise parameters
@@ -85,7 +89,7 @@ end
 %% Animation loop — reveal points step-by-step
 max_len = max(cellfun(@(a) length(a(:,1)), X_all));
 
-for i = 1:max_len
+for i = 1:160
     for k = 1:N
         
         if i <= length(xy{k,1})
@@ -100,13 +104,18 @@ for i = 1:max_len
     end
 
     drawnow;   % Remove limitrate for smooth playback
+    
+    % ---- Capture frame for video ----
+    frame = getframe(gcf);
+    writeVideo(v, frame);
+
+
     pause(0.01);
 end
 
 
-
-
-
+% Close the video file
+close(v);
 %% ================== NOISY GEODESIC FUNCTION ==================
 function dXdt = geodesic_noisy(~, X, r_s, noise_scale, noise_accel)
 
