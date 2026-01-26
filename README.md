@@ -43,9 +43,11 @@ The simulation successfully demonstrates:
 
 
 <p align="center">
-  <<img src="saved%20stuff/Static_1.png" alt="Simulation Output" width="600">
+  <img src="saved%20stuff/Static_1.png" alt="Simulation Output" width="600">
    <img src="blackhole_light_rays.gif", alt="3D Simulation Output" width="600">
 </p>
+
+
 
 
 
