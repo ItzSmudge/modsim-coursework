@@ -42,7 +42,7 @@ The simulation successfully demonstrates:
 3.  **The Photon Sphere:** Light rays that enter a circular orbit around the black hole ($1.5 \times$ Schwarzschild Radius).
 
 <img src="saved%20stuff/Static_1.png" alt="Simulation Output" width="600">
-
+<img src="blackhole_light_rays.gif", alt="3D Simulation Output" width="600">
 
 
 
