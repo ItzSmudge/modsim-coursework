@@ -2,7 +2,7 @@
 
 ![MATLAB](https://img.shields.io/badge/Made_with-MATLAB-orange?style=for-the-badge&logo=mathworks)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-![Grade](https://img.shields.io/badge/Grade-83%25_(First_Class)-brightgreen?style=for-the-badge)
+![Grade](https://img.shields.io/badge/Grade-95%25-brightgreen?style=for-the-badge)
 
 ## 📖 Overview
 
