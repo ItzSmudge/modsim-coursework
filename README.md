@@ -8,7 +8,7 @@
 
 This project is a MATLAB-based simulation engine designed to model the trajectory of light (photons) as they navigate the extreme gravitational curvature surrounding a black hole. 
 
-Developed as part of the **Modelling and Simulation** module at UCL, this project implements General Relativity concepts to visualize how light bends near the Event Horizon and Photon Sphere. The simulation was developed by a team of three and achieved a final grade of **83%**.
+Developed as part of the **Modelling and Simulation** module at UCL, this project implements General Relativity concepts to visualize how light bends near the Event Horizon and Photon Sphere. The simulation was developed by a team of three and achieved a final grade of **95%**.
 
 ## 🚀 Key Features
 
